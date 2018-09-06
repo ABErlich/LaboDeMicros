@@ -19,14 +19,12 @@ main:
 loop:
 		cbi PORTB, 7
 		rcall demora
-		sbi	PORTB, 7 // Pongo 0 en el puerto
+		sbi	PORTB, 7 
 		rcall demora
 		rjmp loop
 
 demora:
 		ldi r16, 255
-
-
 loop2:
 		ldi r17, 255
 loop3:

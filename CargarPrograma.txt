@@ -1,0 +1,7 @@
+avrdude -c usbtiny -p m2560  // Que programador uso y que micro uso, tirar esto una vez enchufado el programador
+
+avrdude -c usbtiny -p m2560 -U flash:w:Led.hex:i
+
+
+l298 para motor DC
+Uln2003 para motor PAP

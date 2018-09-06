@@ -1,8 +1,8 @@
 
-AVRASM ver. 2.1.57  C:\Users\AErlich\Desktop\Labo\Led\Led\Led.asm Wed Sep 05 21:50:15 2018
+AVRASM ver. 2.1.57  C:\Users\AErlich\Desktop\Labo\LaboDeMicros\Led\Led\Led.asm Thu Sep 06 10:47:01 2018
 
 [builtin](2): Including file 'C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1175\avrassembler\Include\m2560def.inc'
-C:\Users\AErlich\Desktop\Labo\Led\Led\Led.asm(9): Including file 'C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1175\avrassembler\Include\m2560def.inc'
+C:\Users\AErlich\Desktop\Labo\LaboDeMicros\Led\Led\Led.asm(9): Including file 'C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1175\avrassembler\Include\m2560def.inc'
                  
                  /*
                  
@@ -1905,14 +1905,12 @@ C:\Users\AErlich\Desktop\Labo\Led\Led\Led.asm(9): Including file 'C:\Program Fil
                  loop:
 00012d 982f      		cbi PORTB, 7
 00012e d003      		rcall demora
-00012f 9a2f      		sbi	PORTB, 7 // Pongo 0 en el puerto
+00012f 9a2f      		sbi	PORTB, 7 
 000130 d001      		rcall demora
 000131 cffb      		rjmp loop
                  
                  demora:
 000132 ef0f      		ldi r16, 255
-                 
-                 
                  loop2:
 000133 ef1f      		ldi r17, 255
                  loop3:
