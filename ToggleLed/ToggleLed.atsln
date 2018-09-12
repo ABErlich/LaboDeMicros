@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{18226A42-8477-4023-8AD2-40C49DA407C9}") = "ToggleLed", "ToggleLed\ToggleLed.asmproj", "{053712B7-901D-4587-BAAF-346606E2C96B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{053712B7-901D-4587-BAAF-346606E2C96B}.Debug|AVR.ActiveCfg = Debug|AVR
+		{053712B7-901D-4587-BAAF-346606E2C96B}.Debug|AVR.Build.0 = Debug|AVR
+		{053712B7-901D-4587-BAAF-346606E2C96B}.Release|AVR.ActiveCfg = Release|AVR
+		{053712B7-901D-4587-BAAF-346606E2C96B}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

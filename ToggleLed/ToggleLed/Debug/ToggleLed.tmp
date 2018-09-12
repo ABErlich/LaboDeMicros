@@ -1,0 +1,33 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.1.57</VERSION>
+ <DEVICE>"ATmega2560"</DEVICE>
+ <WORKING_DIR>C:\Users\AErlich\Desktop\Labo\ToggleLed\ToggleLed\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1175\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\AErlich\Desktop\Labo\ToggleLed\ToggleLed\ToggleLed.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1175\avrassembler\Include\m2560def.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\AErlich\Desktop\Labo\ToggleLed\ToggleLed\Debug/ToggleLed.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>ToggleLed.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>ToggleLed.map</FILE>
+  <FILE>ToggleLed.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <main><FILE>C:\Users\AErlich\Desktop\Labo\ToggleLed\ToggleLed\ToggleLed.asm</FILE><LINE>20</LINE></main>
+  <loop><FILE>C:\Users\AErlich\Desktop\Labo\ToggleLed\ToggleLed\ToggleLed.asm</FILE><LINE>24</LINE></loop>
+  <delayAndRead><FILE>C:\Users\AErlich\Desktop\Labo\ToggleLed\ToggleLed\ToggleLed.asm</FILE><LINE>39</LINE></delayAndRead>
+  <demora><FILE>C:\Users\AErlich\Desktop\Labo\ToggleLed\ToggleLed\ToggleLed.asm</FILE><LINE>79</LINE></demora>
+  <toggleLed><FILE>C:\Users\AErlich\Desktop\Labo\ToggleLed\ToggleLed\ToggleLed.asm</FILE><LINE>55</LINE></toggleLed>
+  <turnOnLed><FILE>C:\Users\AErlich\Desktop\Labo\ToggleLed\ToggleLed\ToggleLed.asm</FILE><LINE>70</LINE></turnOnLed>
+  <turnOffLed><FILE>C:\Users\AErlich\Desktop\Labo\ToggleLed\ToggleLed\ToggleLed.asm</FILE><LINE>74</LINE></turnOffLed>
+  <loop2><FILE>C:\Users\AErlich\Desktop\Labo\ToggleLed\ToggleLed\ToggleLed.asm</FILE><LINE>81</LINE></loop2>
+ </LABELS>
+</ASSEMBLER_INFO>

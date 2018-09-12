@@ -1,0 +1,12 @@
+Ver semana 3 de campus
+
+Descripcion Maximo 1 carilla
+Diagrama en Bloques
+Diagrama de flujo/estados
+
+Finalmente se agrega el Codigo y Circuitos esquematicos
+
+
+SUBO EL PDF AL REPOSITORIO 
+
+Ver que en el campus hay un link para crear un repo de classroom, ahi tengo que poner el anteproyecto
