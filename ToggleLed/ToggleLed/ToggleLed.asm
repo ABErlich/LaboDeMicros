@@ -21,6 +21,13 @@ main:
 		sbi	DDRB, LED  // bit 7 del puerto b como salida
 		cbi DDRB, BOTON  // bit 6 del puerto b como entrada
 
+		// Si DDRB se setea como salida, PORTB me sirve para setear un valor logico
+		// Si DDRB se setea como entrada, PORTB me habilita o deshabilita la resistencia de pullup
+		// Configuro el resistor de pullup para el bit de entrada, para que este por defecto en 1
+		// Ver si por defecto tengo las resistencias de pullup activas o no
+		sbi PORTB, BOTON
+
+
 loop:			// Mi loop principal
 		
 		in r16, PINB  // Leo el puerto B, no se porque el puerto B...
@@ -33,6 +40,13 @@ loop:			// Mi loop principal
 		cpi r16, 1
 
 		brne delayAndRead  // si en r0 tengo 0, salto a toggleLed, sino sigue el loop
+
+
+		/*
+		OTRA OPCION:
+			SBIC: lee un bit directamente de un puerto, y si esta o no en 1, skipea la siguiente instruccion
+			esto me evita de hacer la logica que hice arriba.
+		*/
 
 		rjmp loop 
 
