@@ -21,7 +21,7 @@ Para leer una tabla de RAM tengo:
 Para leer una tabla desde FLASH tengo:
 
 .cseg 
-	tabla_flash: .db "Hola mundo"\0
+	tabla_flash: .db "Hola mundo",0
 	
 	// INICIALIZO EL PUNTERO
 	ldi Zl, low(tabla_flash)*2

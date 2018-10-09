@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.1.57  C:\Users\AErlich\Desktop\Labo\LaboDeMicros\EjercicioParcial\EjercicioParcial\EjercicioParcial.asm Wed Sep 26 20:41:11 2018
+AVRASM ver. 2.1.57  F:\FACULTAD\Laboratorio de Microcontroladores\LaboDeMicros\EjercicioParcial\EjercicioParcial\EjercicioParcial7.asm Tue Oct 09 15:44:08 2018
 
 
 EQU  SIGNATURE_000 0000001e
@@ -1360,7 +1360,8 @@ EQU  UDRE3addr    0000006e
 EQU  UTXC3addr    00000070
 EQU  INT_VECTORS_SIZE 00000072
 CSEG main         0000012c
-DSEG pos          00000200
-CSEG loop         00000130
-CSEG prenderPuertoB2 00000142
-CSEG apagarPuertoB2 00000145
+DSEG salida       00000201
+CSEG loop         0000013c
+CSEG read_port    00000142
+CSEG filtro       00000142
+DSEG entrada      00000200

@@ -14,7 +14,7 @@
     <AssemblyName>EjercicioParcial</AssemblyName>
     <Name>EjercicioParcial</Name>
     <RootNamespace>EjercicioParcial</RootNamespace>
-    <EntryFile>$(MSBuildProjectDirectory)\EjercicioParcial.asm</EntryFile>
+    <EntryFile>$(MSBuildProjectDirectory)\EjercicioParcial7.asm</EntryFile>
     <ToolchainFlavour>Native</ToolchainFlavour>
     <KeepTimersRunning>true</KeepTimersRunning>
     <OverrideVtor>false</OverrideVtor>
@@ -70,6 +70,24 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="EjercicioParcial2.asm">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EjercicioParcial3.asm">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EjercicioParcial4.asm">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EjercicioParcial5.asm">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EjercicioParcial6.asm">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EjercicioParcial7.asm">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EjercicioParcial8.asm">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

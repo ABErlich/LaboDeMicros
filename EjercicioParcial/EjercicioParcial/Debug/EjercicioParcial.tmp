@@ -1,17 +1,17 @@
 <ASSEMBLER_INFO>
  <VERSION>2.1.57</VERSION>
  <DEVICE>"ATmega2560"</DEVICE>
- <WORKING_DIR>C:\Users\AErlich\Desktop\Labo\LaboDeMicros\EjercicioParcial\EjercicioParcial\Debug</WORKING_DIR>
+ <WORKING_DIR>F:\FACULTAD\Laboratorio de Microcontroladores\LaboDeMicros\EjercicioParcial\EjercicioParcial\Debug</WORKING_DIR>
  <INCLUDE_PATH>
-  <DIR>C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1175\avrassembler\Include</DIR>
+  <DIR>D:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1175\avrassembler\Include</DIR>
   <DIR></DIR>
  </INCLUDE_PATH>
- <SOURCE_FILE>C:\Users\AErlich\Desktop\Labo\LaboDeMicros\EjercicioParcial\EjercicioParcial\EjercicioParcial.asm</SOURCE_FILE>
+ <SOURCE_FILE>F:\FACULTAD\Laboratorio de Microcontroladores\LaboDeMicros\EjercicioParcial\EjercicioParcial\EjercicioParcial7.asm</SOURCE_FILE>
  <INCLUDED_FILES>
-  <FILE>C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1175\avrassembler\Include\m2560def.inc</FILE>
+  <FILE>D:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1175\avrassembler\Include\m2560def.inc</FILE>
  </INCLUDED_FILES>
  <OBJECT_FILES>
-  <FILE>C:\Users\AErlich\Desktop\Labo\LaboDeMicros\EjercicioParcial\EjercicioParcial\Debug/EjercicioParcial.obj</FILE>
+  <FILE>F:\FACULTAD\Laboratorio de Microcontroladores\LaboDeMicros\EjercicioParcial\EjercicioParcial\Debug/EjercicioParcial.obj</FILE>
  </OBJECT_FILES>
  <HEX_FILES>
   <FILE>EjercicioParcial.hex</FILE>
@@ -21,10 +21,11 @@
   <FILE>EjercicioParcial.lss</FILE>
  </OUTPUT_FILES>
  <LABELS>
-  <main><FILE>C:\Users\AErlich\Desktop\Labo\LaboDeMicros\EjercicioParcial\EjercicioParcial\EjercicioParcial.asm</FILE><LINE>9</LINE></main>
-  <pos><FILE>C:\Users\AErlich\Desktop\Labo\LaboDeMicros\EjercicioParcial\EjercicioParcial\EjercicioParcial.asm</FILE><LINE>59</LINE></pos>
-  <loop><FILE>C:\Users\AErlich\Desktop\Labo\LaboDeMicros\EjercicioParcial\EjercicioParcial\EjercicioParcial.asm</FILE><LINE>13</LINE></loop>
-  <prenderPuertoB2><FILE>C:\Users\AErlich\Desktop\Labo\LaboDeMicros\EjercicioParcial\EjercicioParcial\EjercicioParcial.asm</FILE><LINE>46</LINE></prenderPuertoB2>
-  <apagarPuertoB2><FILE>C:\Users\AErlich\Desktop\Labo\LaboDeMicros\EjercicioParcial\EjercicioParcial\EjercicioParcial.asm</FILE><LINE>51</LINE></apagarPuertoB2>
+  <main><FILE>F:\FACULTAD\Laboratorio de Microcontroladores\LaboDeMicros\EjercicioParcial\EjercicioParcial\EjercicioParcial7.asm</FILE><LINE>20</LINE></main>
+  <salida><FILE>F:\FACULTAD\Laboratorio de Microcontroladores\LaboDeMicros\EjercicioParcial\EjercicioParcial\EjercicioParcial7.asm</FILE><LINE>67</LINE></salida>
+  <loop><FILE>F:\FACULTAD\Laboratorio de Microcontroladores\LaboDeMicros\EjercicioParcial\EjercicioParcial\EjercicioParcial7.asm</FILE><LINE>45</LINE></loop>
+  <read_port><FILE>F:\FACULTAD\Laboratorio de Microcontroladores\LaboDeMicros\EjercicioParcial\EjercicioParcial\EjercicioParcial7.asm</FILE><LINE>55</LINE></read_port>
+  <filtro><FILE>F:\FACULTAD\Laboratorio de Microcontroladores\LaboDeMicros\EjercicioParcial\EjercicioParcial\EjercicioParcial7.asm</FILE><LINE>59</LINE></filtro>
+  <entrada><FILE>F:\FACULTAD\Laboratorio de Microcontroladores\LaboDeMicros\EjercicioParcial\EjercicioParcial\EjercicioParcial7.asm</FILE><LINE>66</LINE></entrada>
  </LABELS>
 </ASSEMBLER_INFO>
