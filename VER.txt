@@ -24,8 +24,8 @@ Para leer una tabla desde FLASH tengo:
 	tabla_flash: .db "Hola mundo"\0
 	
 	// INICIALIZO EL PUNTERO
-	ldi Zl, low(tabla_flash)
-	ldi Zh, high(tabla_flash)
+	ldi Zl, low(tabla_flash)*2
+	ldi Zh, high(tabla_flash)*2
 	
 	// ahora en Z tengo el puntero a la table de la FLASH entonces:
 	
