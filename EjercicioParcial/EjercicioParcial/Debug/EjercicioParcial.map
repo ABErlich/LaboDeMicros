@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.1.57  F:\FACULTAD\Laboratorio de Microcontroladores\LaboDeMicros\EjercicioParcial\EjercicioParcial\Ejercicio_EscriboRom.asm Tue Oct 09 18:17:43 2018
+AVRASM ver. 2.1.57  C:\Users\AErlich\Desktop\Labo\LaboDeMicros\EjercicioParcial\EjercicioParcial\parcial2.asm Wed Oct 10 21:14:36 2018
 
 
 EQU  SIGNATURE_000 0000001e
@@ -1359,4 +1359,15 @@ EQU  URXC3addr    0000006c
 EQU  UDRE3addr    0000006e
 EQU  UTXC3addr    00000070
 EQU  INT_VECTORS_SIZE 00000072
-CSEG EEPROM_write 00000000
+DEF  cuentaH      r21
+DEF  cuentaL      r20
+DEF  rx           r17
+DEF  maximoX      r23
+DSEG x_           00000200
+CSEG main         00000300
+CSEG leerPuertoB  00000306
+CSEG obtenerMaximoX 0000030e
+CSEG FinalizarConCuenta 00000322
+CSEG FinalizarConOverflow 00000320
+CSEG loop         0000030f
+CSEG calcularCuenta 00000319

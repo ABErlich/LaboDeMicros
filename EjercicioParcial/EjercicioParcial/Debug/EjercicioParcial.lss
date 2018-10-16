@@ -1,7 +1,7 @@
 
-AVRASM ver. 2.1.57  F:\FACULTAD\Laboratorio de Microcontroladores\LaboDeMicros\EjercicioParcial\EjercicioParcial\Ejercicio_EscriboRom.asm Tue Oct 09 18:17:43 2018
+AVRASM ver. 2.1.57  C:\Users\AErlich\Desktop\Labo\LaboDeMicros\EjercicioParcial\EjercicioParcial\parcial2.asm Wed Oct 10 21:14:36 2018
 
-[builtin](2): Including file 'D:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1175\avrassembler\Include\m2560def.inc'
+[builtin](2): Including file 'C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1175\avrassembler\Include\m2560def.inc'
                  
                  /*
                  
@@ -1841,34 +1841,82 @@ AVRASM ver. 2.1.57  F:\FACULTAD\Laboratorio de Microcontroladores\LaboDeMicros\E
                  
                  ; ***** END OF FILE ******************************************************
                  
-                  * Ejercicio_LeoRom.asm
+                  * parcial2.asm
                   *
-                  *  Created: 9/10/2018 17:27:49
-                  *   Author: Axel
+                  *  Created: 10/10/2018 19:41:33
+                  *   Author: AErlich
                   */ 
                  
-                  // Tener cuidado de deshabilitar interrupciones globales cuando se trabaja con EPROM
                  
-                 EEPROM_write:
-                 		; Wait for completion of previous write
-000000 99f9      		sbic EECR, EEPE 
-000001 cffe      		rjmp EEPROM_write
+                  // Leer el valor del puerto B y guardarlo en una variable X
+                  // Escribir en el puerto C x^2 + 2x
+                  // Calcular los valores posibles de x para que el resultado quepa en 8 bits (sin signo)
+                  // Si la operacion desborda, escribir en el puerto C 0xFF
                  
-000002 e020      		ldi r18, 0x00
-000003 e11d      		ldi r17, 0x1D
+                  .def cuentaH = r21
+                  .def cuentaL = r20
+                  .def rx = r17
+                  .def maximoX = r23
                  
-                 		; Seteo la direccion de escritura
-000004 bd22      		out EEARH, r18
-000005 bd11      		out EEARL, r17
+                 .dseg
+                 .org 0x200
+000200           x_: .byte 1
                  
-                 		; dato que voy a escribir
-000006 e607      		ldi r16, 0x67
-000007 bd00      		out EEDR,r16
+                 .cseg
+                 .org 0x300
                  
-000008 9afa      		sbi EECR, EEMPE // EEMPE : Master Programming enable, este es el habilitador de escritura
+                 main:
+                 		// Configuro la direccion de X
+000300 e0c0      		ldi Yl, low(x_)
+000301 e0d2      		ldi yH, high(x_)
                  
-000009 9af9      		sbi EECR,EEPE // EEPE: Programming enable, una vez puesta la direccion y dato, se pone este en 1 para escribir
-                 						// Se limpia automaticamente despues de 4 ciclos
+000302 e000      		ldi r16, 0
+000303 ef1f      		ldi r17, 0xFF
+000304 b904      		out DDRB, r16 // puerto B como entrada
+000305 b917      		out DDRC, r17 // puerto C como salida
+                 
+                 leerPuertoB:
+                 
+000306 b113      		IN rx, PINB // leo el puerto B
+000307 8308      		st Y, r16
+000308 940e 030e 		call obtenerMaximoX
+00030a 1717      		cp rx, maximoX
+00030b f0b0      		brlo FinalizarConCuenta
+                 
+00030c 940c 0320 		jmp FinalizarConOverflow
+                 
+                 
+                 obtenerMaximoX:
+00030e e070      		ldi maximoX, 0
+                 loop:
+00030f 9573      		inc maximoX
+000310 2e51      		mov r5, rx // auxiliar
+000311 2f17      		mov rx, maximoX
+000312 940e 0319 		call calcularCuenta
+000314 2d15      		mov rx, r5 // recupero
+                 		
+000315 e020      		ldi r18, 0
+000316 1752      		cp cuentaH, r18 // la parte alta de la cuenta es mayor a 0 entonces la cuenta > 255
+000317 957a      		dec maximoX
+000318 9508      		ret 
+                 
+                 calcularCuenta:
+000319 2e31      		mov r3, rx // auxiliar
+                 
+00031a 9c33      		mul r3, r3 // Hago x*x
+00031b 01a0      		movw cuentaL, r0 // Me traigo el resultado r0:r1 en cuentaL:cuentaH
+                 
+00031c 0c33      		lsl r3 // Hago x*2
+00031d 1d43      		adc cuentaL, r3 // x*x + x*2
+00031e e000      		ldi r16, 0
+00031f 1f50      		adc cuentaH, r16
+                 
+                 FinalizarConOverflow:
+000320 ef2f      		ldi r18, 0xFF
+000321 b928      		OUT PORTC, r18
+                 
+                 FinalizarConCuenta:
+000322 940e 0319 		call calcularCuenta
 
 
 RESOURCE USE INFORMATION
@@ -1886,41 +1934,41 @@ counted separately from r26..r31 here.
 .dseg memory usage only counts static data declared with .byte
 
 "ATmega2560" register use summary:
-r0 :   0 r1 :   0 r2 :   0 r3 :   0 r4 :   0 r5 :   0 r6 :   0 r7 :   0 
+r0 :   1 r1 :   0 r2 :   0 r3 :   5 r4 :   0 r5 :   2 r6 :   0 r7 :   0 
 r8 :   0 r9 :   0 r10:   0 r11:   0 r12:   0 r13:   0 r14:   0 r15:   0 
-r16:   2 r17:   2 r18:   2 r19:   0 r20:   0 r21:   0 r22:   0 r23:   0 
-r24:   0 r25:   0 r26:   0 r27:   0 r28:   0 r29:   0 r30:   0 r31:   0 
-x  :   0 y  :   0 z  :   0 
-Registers used: 3 out of 35 (8.6%)
+r16:   5 r17:   8 r18:   4 r19:   0 r20:   3 r21:   2 r22:   0 r23:   5 
+r24:   0 r25:   0 r26:   0 r27:   0 r28:   1 r29:   1 r30:   0 r31:   0 
+x  :   0 y  :   1 z  :   0 
+Registers used: 12 out of 35 (34.3%)
 
 "ATmega2560" instruction use summary:
-.lds  :   0 .sts  :   0 adc   :   0 add   :   0 adiw  :   0 and   :   0 
+.lds  :   0 .sts  :   0 adc   :   2 add   :   0 adiw  :   0 and   :   0 
 andi  :   0 asr   :   0 bclr  :   0 bld   :   0 brbc  :   0 brbs  :   0 
 brcc  :   0 brcs  :   0 break :   0 breq  :   0 brge  :   0 brhc  :   0 
-brhs  :   0 brid  :   0 brie  :   0 brlo  :   0 brlt  :   0 brmi  :   0 
+brhs  :   0 brid  :   0 brie  :   0 brlo  :   1 brlt  :   0 brmi  :   0 
 brne  :   0 brpl  :   0 brsh  :   0 brtc  :   0 brts  :   0 brvc  :   0 
-brvs  :   0 bset  :   0 bst   :   0 call  :   0 cbi   :   0 cbr   :   0 
+brvs  :   0 bset  :   0 bst   :   0 call  :   3 cbi   :   0 cbr   :   0 
 clc   :   0 clh   :   0 cli   :   0 cln   :   0 clr   :   0 cls   :   0 
-clt   :   0 clv   :   0 clz   :   0 com   :   0 cp    :   0 cpc   :   0 
-cpi   :   0 cpse  :   0 dec   :   0 eicall:   0 eijmp :   0 elpm  :   0 
+clt   :   0 clv   :   0 clz   :   0 com   :   0 cp    :   2 cpc   :   0 
+cpi   :   0 cpse  :   0 dec   :   1 eicall:   0 eijmp :   0 elpm  :   0 
 eor   :   0 fmul  :   0 fmuls :   0 fmulsu:   0 icall :   0 ijmp  :   0 
-in    :   0 inc   :   0 jmp   :   0 ld    :   0 ldd   :   0 ldi   :   3 
-lds   :   0 lpm   :   0 lsl   :   0 lsr   :   0 mov   :   0 movw  :   0 
-mul   :   0 muls  :   0 mulsu :   0 neg   :   0 nop   :   0 or    :   0 
-ori   :   0 out   :   3 pop   :   0 push  :   0 rcall :   0 ret   :   1 
-reti  :   0 rjmp  :   1 rol   :   0 ror   :   0 sbc   :   0 sbci  :   0 
-sbi   :   2 sbic  :   1 sbis  :   0 sbiw  :   0 sbr   :   0 sbrc  :   0 
+in    :   1 inc   :   1 jmp   :   1 ld    :   0 ldd   :   0 ldi   :   8 
+lds   :   0 lpm   :   0 lsl   :   1 lsr   :   0 mov   :   4 movw  :   1 
+mul   :   1 muls  :   0 mulsu :   0 neg   :   0 nop   :   0 or    :   0 
+ori   :   0 out   :   4 pop   :   0 push  :   0 rcall :   0 ret   :   1 
+reti  :   0 rjmp  :   0 rol   :   0 ror   :   0 sbc   :   0 sbci  :   0 
+sbi   :   0 sbic  :   0 sbis  :   0 sbiw  :   0 sbr   :   0 sbrc  :   0 
 sbrs  :   0 sec   :   0 seh   :   0 sei   :   0 sen   :   0 ser   :   0 
 ses   :   0 set   :   0 sev   :   0 sez   :   0 sleep :   0 spm   :   0 
-st    :   0 std   :   0 sts   :   0 sub   :   0 subi  :   0 swap  :   0 
+st    :   1 std   :   0 sts   :   0 sub   :   0 subi  :   0 swap  :   0 
 tst   :   0 wdr   :   0 
-Instructions used: 6 out of 116 (5.2%)
+Instructions used: 16 out of 116 (13.8%)
 
 "ATmega2560" memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x000016     22      0     22  262144   0.0%
-[.dseg] 0x000200 0x000200      0      0      0    8192   0.0%
+[.cseg] 0x000600 0x00064a     74      0     74  262144   0.0%
+[.dseg] 0x000200 0x000201      0      1      1    8192   0.0%
 [.eseg] 0x000000 0x000000      0      0      0    4096   0.0%
 
 Assembly complete, 0 errors, 0 warnings

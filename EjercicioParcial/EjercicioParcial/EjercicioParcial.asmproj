@@ -14,7 +14,7 @@
     <AssemblyName>EjercicioParcial</AssemblyName>
     <Name>EjercicioParcial</Name>
     <RootNamespace>EjercicioParcial</RootNamespace>
-    <EntryFile>$(MSBuildProjectDirectory)\Ejercicio_EscriboRom.asm</EntryFile>
+    <EntryFile>$(MSBuildProjectDirectory)\parcial2.asm</EntryFile>
     <ToolchainFlavour>Native</ToolchainFlavour>
     <KeepTimersRunning>true</KeepTimersRunning>
     <OverrideVtor>false</OverrideVtor>
@@ -94,6 +94,18 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Ejercicio_LeoFlash.asm">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="parcial1.asm">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="parcial2.asm">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="parcial3.asm">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="parcial4.asm">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
