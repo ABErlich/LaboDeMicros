@@ -1,6 +1,9 @@
 avrdude -c usbtiny -p m2560  // Que programador uso y que micro uso, tirar esto una vez enchufado el programador
 
-avrdude -c usbtiny -p m2560 -U flash:w:Led.hex:i
+avrdude -c usbtiny -p m2560 -U flash:w:C:\Users\Axel\Desktop\2018-2c-trabajo-practico-irobopong5000\codigo\iRoboPong5000\iRoboPong5000\Debug\iRoboPong5000.hex:i
+
+
+avrdude -p m2560 -c arduino -P \\.\COM3 -b 115200 -U flash:w:Lab3.hex
 
 
 l298 para motor DC

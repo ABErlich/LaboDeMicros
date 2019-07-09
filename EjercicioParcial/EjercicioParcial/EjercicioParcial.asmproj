@@ -14,7 +14,7 @@
     <AssemblyName>EjercicioParcial</AssemblyName>
     <Name>EjercicioParcial</Name>
     <RootNamespace>EjercicioParcial</RootNamespace>
-    <EntryFile>$(MSBuildProjectDirectory)\Ejercicio_EscriboRom.asm</EntryFile>
+    <EntryFile>$(MSBuildProjectDirectory)\Ejercicio_Interrupciones.asm</EntryFile>
     <ToolchainFlavour>Native</ToolchainFlavour>
     <KeepTimersRunning>true</KeepTimersRunning>
     <OverrideVtor>false</OverrideVtor>
@@ -76,6 +76,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Ejercicio_Division.asm">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Ejercicio_Interrupciones.asm">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Ejercicio_LeoRom.asm">

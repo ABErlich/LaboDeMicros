@@ -1,17 +1,17 @@
 <ASSEMBLER_INFO>
  <VERSION>2.1.57</VERSION>
  <DEVICE>"ATmega2560"</DEVICE>
- <WORKING_DIR>C:\Users\AErlich\Desktop\Labo\LaboDeMicros\Led\Led\Debug</WORKING_DIR>
+ <WORKING_DIR>F:\FACULTAD\Laboratorio de Microcontroladores\LaboDeMicros\Led\Led\Debug</WORKING_DIR>
  <INCLUDE_PATH>
-  <DIR>C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1175\avrassembler\Include</DIR>
+  <DIR>D:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1175\avrassembler\Include</DIR>
   <DIR></DIR>
  </INCLUDE_PATH>
- <SOURCE_FILE>C:\Users\AErlich\Desktop\Labo\LaboDeMicros\Led\Led\Led.asm</SOURCE_FILE>
+ <SOURCE_FILE>F:\FACULTAD\Laboratorio de Microcontroladores\LaboDeMicros\Led\Led\Led.asm</SOURCE_FILE>
  <INCLUDED_FILES>
-  <FILE>C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1175\avrassembler\Include\m2560def.inc</FILE>
+  <FILE>D:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1175\avrassembler\Include\m2560def.inc</FILE>
  </INCLUDED_FILES>
  <OBJECT_FILES>
-  <FILE>C:\Users\AErlich\Desktop\Labo\LaboDeMicros\Led\Led\Debug/Led.obj</FILE>
+  <FILE>F:\FACULTAD\Laboratorio de Microcontroladores\LaboDeMicros\Led\Led\Debug/Led.obj</FILE>
  </OBJECT_FILES>
  <HEX_FILES>
   <FILE>Led.hex</FILE>
@@ -21,11 +21,8 @@
   <FILE>Led.lss</FILE>
  </OUTPUT_FILES>
  <LABELS>
-  <main><FILE>C:\Users\AErlich\Desktop\Labo\LaboDeMicros\Led\Led\Led.asm</FILE><LINE>16</LINE></main>
-  <loop><FILE>C:\Users\AErlich\Desktop\Labo\LaboDeMicros\Led\Led\Led.asm</FILE><LINE>19</LINE></loop>
-  <demora><FILE>C:\Users\AErlich\Desktop\Labo\LaboDeMicros\Led\Led\Led.asm</FILE><LINE>26</LINE></demora>
-  <loop2><FILE>C:\Users\AErlich\Desktop\Labo\LaboDeMicros\Led\Led\Led.asm</FILE><LINE>28</LINE></loop2>
-  <loop3><FILE>C:\Users\AErlich\Desktop\Labo\LaboDeMicros\Led\Led\Led.asm</FILE><LINE>30</LINE></loop3>
-  <loop4><FILE>C:\Users\AErlich\Desktop\Labo\LaboDeMicros\Led\Led\Led.asm</FILE><LINE>32</LINE></loop4>
+  <main><FILE>F:\FACULTAD\Laboratorio de Microcontroladores\LaboDeMicros\Led\Led\Led.asm</FILE><LINE>16</LINE></main>
+  <loop><FILE>F:\FACULTAD\Laboratorio de Microcontroladores\LaboDeMicros\Led\Led\Led.asm</FILE><LINE>19</LINE></loop>
+  <demora><FILE>F:\FACULTAD\Laboratorio de Microcontroladores\LaboDeMicros\Led\Led\Led.asm</FILE><LINE>26</LINE></demora>
  </LABELS>
 </ASSEMBLER_INFO>

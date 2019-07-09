@@ -1,8 +1,8 @@
 
-AVRASM ver. 2.1.57  C:\Users\AErlich\Desktop\Labo\LaboDeMicros\Led\Led\Led.asm Thu Sep 06 10:47:01 2018
+AVRASM ver. 2.1.57  F:\FACULTAD\Laboratorio de Microcontroladores\LaboDeMicros\Led\Led\Led.asm Wed Oct 17 14:57:24 2018
 
-[builtin](2): Including file 'C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1175\avrassembler\Include\m2560def.inc'
-C:\Users\AErlich\Desktop\Labo\LaboDeMicros\Led\Led\Led.asm(9): Including file 'C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1175\avrassembler\Include\m2560def.inc'
+[builtin](2): Including file 'D:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1175\avrassembler\Include\m2560def.inc'
+F:\FACULTAD\Laboratorio de Microcontroladores\LaboDeMicros\Led\Led\Led.asm(9): Including file 'D:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1175\avrassembler\Include\m2560def.inc'
                  
                  /*
                  
@@ -1903,27 +1903,18 @@ C:\Users\AErlich\Desktop\Labo\LaboDeMicros\Led\Led\Led.asm(9): Including file 'C
                  
 00012c 9a27      		sbi	DDRB,7 // Configuro el puerto B7 COMO SALIDA
                  loop:
-00012d 982f      		cbi PORTB, 7
+00012d 9a2f      		sbi PORTB, 7
 00012e d003      		rcall demora
-00012f 9a2f      		sbi	PORTB, 7 
+00012f 982f      		cbi	PORTB, 7 
 000130 d001      		rcall demora
 000131 cffb      		rjmp loop
                  
                  demora:
 000132 ef0f      		ldi r16, 255
-                 loop2:
-000133 ef1f      		ldi r17, 255
-                 loop3:
-000134 e025      		ldi r18, 5
-                 loop4:
-000135 952a      		dec r18
-000136 f7f1      		brne loop4
-000137 951a      		dec r17
-000138 f7d9      		brne loop3
-000139 950a      		dec r16
-00013a f7c1      		brne loop2
+000133 950a      		dec r16
+000134 f7e9      		brne demora
                  		
-00013b 9508      		ret
+000135 9508      		ret
                  
 
 
@@ -1944,23 +1935,23 @@ counted separately from r26..r31 here.
 "ATmega2560" register use summary:
 r0 :   0 r1 :   0 r2 :   0 r3 :   0 r4 :   0 r5 :   0 r6 :   0 r7 :   0 
 r8 :   0 r9 :   0 r10:   0 r11:   0 r12:   0 r13:   0 r14:   0 r15:   0 
-r16:   2 r17:   2 r18:   2 r19:   0 r20:   0 r21:   0 r22:   0 r23:   0 
+r16:   2 r17:   0 r18:   0 r19:   0 r20:   0 r21:   0 r22:   0 r23:   0 
 r24:   0 r25:   0 r26:   0 r27:   0 r28:   0 r29:   0 r30:   0 r31:   0 
 x  :   0 y  :   0 z  :   0 
-Registers used: 3 out of 35 (8.6%)
+Registers used: 1 out of 35 (2.9%)
 
 "ATmega2560" instruction use summary:
 .lds  :   0 .sts  :   0 adc   :   0 add   :   0 adiw  :   0 and   :   0 
 andi  :   0 asr   :   0 bclr  :   0 bld   :   0 brbc  :   0 brbs  :   0 
 brcc  :   0 brcs  :   0 break :   0 breq  :   0 brge  :   0 brhc  :   0 
 brhs  :   0 brid  :   0 brie  :   0 brlo  :   0 brlt  :   0 brmi  :   0 
-brne  :   3 brpl  :   0 brsh  :   0 brtc  :   0 brts  :   0 brvc  :   0 
+brne  :   1 brpl  :   0 brsh  :   0 brtc  :   0 brts  :   0 brvc  :   0 
 brvs  :   0 bset  :   0 bst   :   0 call  :   0 cbi   :   1 cbr   :   0 
 clc   :   0 clh   :   0 cli   :   0 cln   :   0 clr   :   0 cls   :   0 
 clt   :   0 clv   :   0 clz   :   0 com   :   0 cp    :   0 cpc   :   0 
-cpi   :   0 cpse  :   0 dec   :   3 eicall:   0 eijmp :   0 elpm  :   0 
+cpi   :   0 cpse  :   0 dec   :   1 eicall:   0 eijmp :   0 elpm  :   0 
 eor   :   0 fmul  :   0 fmuls :   0 fmulsu:   0 icall :   0 ijmp  :   0 
-in    :   0 inc   :   0 jmp   :   0 ld    :   0 ldd   :   0 ldi   :   3 
+in    :   0 inc   :   0 jmp   :   0 ld    :   0 ldd   :   0 ldi   :   1 
 lds   :   0 lpm   :   0 lsl   :   0 lsr   :   0 mov   :   0 movw  :   0 
 mul   :   0 muls  :   0 mulsu :   0 neg   :   0 nop   :   0 or    :   0 
 ori   :   0 out   :   0 pop   :   0 push  :   0 rcall :   2 ret   :   1 
@@ -1975,7 +1966,7 @@ Instructions used: 8 out of 116 (6.9%)
 "ATmega2560" memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x000278     34      0     34  262144   0.0%
+[.cseg] 0x000000 0x00026c     22      0     22  262144   0.0%
 [.dseg] 0x000200 0x000200      0      0      0    8192   0.0%
 [.eseg] 0x000000 0x000000      0      0      0    4096   0.0%
 

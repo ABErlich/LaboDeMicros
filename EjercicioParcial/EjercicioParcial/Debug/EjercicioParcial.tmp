@@ -6,7 +6,7 @@
   <DIR>D:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1175\avrassembler\Include</DIR>
   <DIR></DIR>
  </INCLUDE_PATH>
- <SOURCE_FILE>F:\FACULTAD\Laboratorio de Microcontroladores\LaboDeMicros\EjercicioParcial\EjercicioParcial\Ejercicio_EscriboRom.asm</SOURCE_FILE>
+ <SOURCE_FILE>F:\FACULTAD\Laboratorio de Microcontroladores\LaboDeMicros\EjercicioParcial\EjercicioParcial\Ejercicio_Interrupciones.asm</SOURCE_FILE>
  <INCLUDED_FILES>
   <FILE>D:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1175\avrassembler\Include\m2560def.inc</FILE>
  </INCLUDED_FILES>
@@ -21,6 +21,6 @@
   <FILE>EjercicioParcial.lss</FILE>
  </OUTPUT_FILES>
  <LABELS>
-  <EEPROM_write><FILE>F:\FACULTAD\Laboratorio de Microcontroladores\LaboDeMicros\EjercicioParcial\EjercicioParcial\Ejercicio_EscriboRom.asm</FILE><LINE>10</LINE></EEPROM_write>
+  <int_config><FILE>F:\FACULTAD\Laboratorio de Microcontroladores\LaboDeMicros\EjercicioParcial\EjercicioParcial\Ejercicio_Interrupciones.asm</FILE><LINE>11</LINE></int_config>
  </LABELS>
 </ASSEMBLER_INFO>

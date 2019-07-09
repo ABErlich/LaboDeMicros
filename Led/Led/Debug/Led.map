@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.1.57  C:\Users\AErlich\Desktop\Labo\LaboDeMicros\Led\Led\Led.asm Thu Sep 06 10:47:01 2018
+AVRASM ver. 2.1.57  F:\FACULTAD\Laboratorio de Microcontroladores\LaboDeMicros\Led\Led\Led.asm Wed Oct 17 14:57:24 2018
 
 
 EQU  SIGNATURE_000 0000001e
@@ -1362,6 +1362,3 @@ EQU  INT_VECTORS_SIZE 00000072
 CSEG main         0000012c
 CSEG loop         0000012d
 CSEG demora       00000132
-CSEG loop2        00000133
-CSEG loop3        00000134
-CSEG loop4        00000135
